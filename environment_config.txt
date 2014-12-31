@@ -1,0 +1,12 @@
+Használjunk env property-ket confighoz. Minden property-t prefixeljünk az app nevével.
+
+- kiváltja a config.properties-t
+- könnyebb így szerverek között költöztetni az appot
+
+Spring xml configból használhatjuk pl:
+<property name="xxx" value="#{systemEnvironment['ANT_HOME']}" />
+
+Java-ból használhatjuk pl:
+System.getenv("ANT_HOME")
+
+Ezeket a propertyket tegyük elérhetővé egy statikus osztályból, ne hivatkozzunk rá stringként.
